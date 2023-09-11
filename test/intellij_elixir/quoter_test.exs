@@ -9,9 +9,9 @@ defmodule IntellijElixir.QuoterTest do
   end
 
   test "responds to raw send of GenServer.call" do
-    ref = make_ref
-    send(IntellijElixir.Quoter, {:"$gen_call", {self, ref}, @code})
+    ref = Kernel.make_ref
+    send(IntellijElixir.Quoter, {:"$gen_call", {Kernel.self, ref}, @code})
 
-    assert_receive {ref, @quoted}
+    assert_receive {^ref, @quoted}
   end
 end

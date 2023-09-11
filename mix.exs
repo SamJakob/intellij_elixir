@@ -7,13 +7,13 @@ defmodule IntellijElixir.Mixfile do
       deps: deps(),
       description: description(),
       docs: docs(),
-      elixir: "~> 1.7",
+      elixir: "~> 1.15",
       package: package(),
       preferred_cli_env: [
         credo: :test,
         dialyzer: :test
       ],
-      version: "2.1.0"
+      version: "2.2.0"
     ]
   end
 
@@ -35,10 +35,10 @@ defmodule IntellijElixir.Mixfile do
   # Type `mix help deps` for more examples and options
   defp deps do
     [
-      {:credo, "1.0.0", only: :test},
-      {:dialyxir, "~> 0.5", only: :test, runtime: false},
-      {:distillery, "~> 2.0", runtime: false},
-      {:ex_doc, "~> 0.19.0", only: [:dev, :test], runtime: false}
+      {:credo, "~> 1.7.0", only: :test},
+      {:dialyxir, "~> 1.4.1", only: :test, runtime: false},
+      {:distillery, "~> 2.1", runtime: false},
+      {:ex_doc, "~> 0.30.6", only: [:dev, :test], runtime: false}
     ]
   end
 
@@ -73,7 +73,8 @@ defmodule IntellijElixir.Mixfile do
         "Github" => "https://github.com/KronicDeth/intellij_elixir"
       },
       maintainers: [
-        "Luke Imhoff"
+        "KronicDeth",
+        "SamJakob"
       ]
     ]
   end
