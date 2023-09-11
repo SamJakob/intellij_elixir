@@ -11,7 +11,7 @@ defmodule IntellijElixir.Quoter do
     GenServer.start_link(__MODULE__, args, Keyword.put_new(opts, :name, __MODULE__))
   end
 
-  @spec child_spec() :: Supervisor.child_spec()
+  @spec child_spec() :: map()
   def child_spec() do
     %{
       id: __MODULE__,
